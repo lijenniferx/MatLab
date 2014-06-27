@@ -4,6 +4,11 @@ get_data
 burst_features
 get_gapes
 
+The file “plot_emg_spike_train.m’ contains a small demo of these three master functions.
+I’ve also provided a data file that you can use for the demo: ’120530jxl36.nex’
+
+You need to change some of the path definitions in ‘get_data’ and ‘get_gapes’ depending on where you will be storing your data and your algorithm specification matrix (QDA_nostd_no_first.mat) 
+
 
 Function Dependencies
 ===================
@@ -38,3 +43,4 @@ QDA_nostd_no_first
 
 x=peak_to_peak
 y=duration
+
