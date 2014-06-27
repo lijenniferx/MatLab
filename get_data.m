@@ -22,7 +22,7 @@
 %                    taste stimulus. For each array, row x column = trials x time (ms)
 % __useful_events:   A cell array consisting of taste delivery timestamps. Can be broken down into useful_events{1}, etc, to get the
 %                    timestamps for the first taste stimulus. 
-%__final_trials:     A cell array consisting of the indices of taste
+% __final_trials:     A cell array consisting of the indices of taste
 %                    deliveries with detectable EMG. Deliveries were
 %                    retained if the animal produced a detectable EMG response. 
 %                    where the animal produced a detectable EMG response. 
@@ -33,7 +33,7 @@
 %                   EMG data: '120704jxl40.nex'
 %
 % HELPER FUNCTIONS
-% __readNexData():                Reads the binary .nex file and puts the data into a structure (written by Plexon, Inc)
+% __readNexFile():                Reads the binary .nex file and puts the data into a structure (written by Plexon, Inc)
 % __removing_bad_events():        Removes some fake events due to hardware problems
 % __keep_significant_response():  Returns a vector of trials where the taste induced a sufficiently large EMG response
 % __timestamps_to_spiketrain():   Converts spike times into a list of 0s and 1s, where 1 corresponds to the occurrence of a spike (resolution: 1 kHz)
@@ -214,7 +214,7 @@ function [data,useful_events,final_trials,laser_on]=get_data(issorted,filename, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Identify the trials where the taste elicited a sufficiently large EMG response
-%%%% 1. the mean response is less than the 1x the mean of the baseline response (emg_baseline)
+%%%% 1. the mean response is greater than the 1x the mean of the baseline response (emg_baseline)
 %%%% 2. and the max is larger than mean(emg_baseline)+4*std(emg_baseline)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

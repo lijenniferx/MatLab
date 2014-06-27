@@ -48,7 +48,7 @@ end
 %%%%%%%%%%%%%%%% parameters for generating the envelope
 
 [c,d]=butter(3,0.03,'low');  %%% 0.05 is low pass filtering at 25 Hz, 0.03 is low pass filtering at 15 Hz
-smoothing_window=1;%10;
+smoothing_window=1;%10; # if 1, does nothing
 
 
 %%%%% parameters for detecting individual movements
